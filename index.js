@@ -29,9 +29,11 @@ function removeStoreAtPosition(stores, index) {
  */
 function duplicateStore(store) {
   // Creates a duplicate of the `store` object.
-  let newStore = {...store}
-  store.boardGames = [];
-  store.address = {};
+  let newStore = {...store};
+  // duplicate board games from store object array
+  newStore.boardGames = [...store.boardGames];
+  // duplicate address from store object
+  newStore.address = {...store.address};
   return newStore;
 }
 
