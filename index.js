@@ -1,51 +1,52 @@
-//**
-* Adds a new store to the very end of the list.
-* @param {Object[]]} stores - An array of store objects.
-* @param {Object} store - An object representing a single store. See the instructions for details on its shape.
-* @returns {Object[]} The same `stores` array that was inputted.
-*/
-function addNewStore(stores, store) {
- stores.push(store);
- 
- return stores;
+/**
+ * Adds a new store to the very end of the list.
+ * @param {Object[]]} stores - An array of store objects.
+ * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
+ * @returns {Object[]} The same `stores` array that was inputted.
+ */
+ function addNewStore(stores, store) {
+  stores.push(store);
+  
+  return stores;
 }
 
 /**
-* Removes a store object at the given position.
-* @param {Object[]]} stores - An array of store objects.
-* @param {number} index - A number representing the index of the store to be removed from the array.
-* @returns {Object[]} The same `stores` array that was inputted.
-*/
+ * Removes a store object at the given position.
+ * @param {Object[]]} stores - An array of store objects.
+ * @param {number} index - A number representing the index of the store to be removed from the array.
+ * @returns {Object[]} The same `stores` array that was inputted.
+ */
 function removeStoreAtPosition(stores, index) {
- stores.splice(index, 1);
- return stores;
+  stores.splice(index, 1);
+  return stores;
 }
 
 /**
-* Creates a duplicate of the `store` object. No references should be shared between the inputted `store` and the result.
-* @param {Object} store - An object representing a single store. See the instructions for details on its shape.
-* @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
-*/
+ * Creates a duplicate of the `store` object. No references should be shared between the inputted `store` and the result.
+ * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
+ * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
+ */
 function duplicateStore(store) {
- let copiedStore = {};
- let objVal = Object.values(store);//array
- let objKey = Object.keys(store); //array
- for(let i = 0; (i < objVal.length); i++) {
-   let keyName = objKey[i];
-   if(Array.isArray(objVal[i])) {
-      copiedStore[keyName] = objVal[i].splice(0);
-   } else if(typeof objVal[i] !== "object") {
-     copiedStore[keyName] = objVal[i];
-   } else if (typeof objVal[i] === "object") {
-     copiedStore[keyName] = {...objVal[i]};
-   }
- }
- return copiedStore;
+  let copiedStore = {};
+  let objVal = Object.values(store);//array
+  let objKey = Object.keys(store); //array
+  for(let i = 0; (i < objVal.length); i++) {
+    let keyName = objKey[i];
+    if(Array.isArray(objVal[i])) {
+       copiedStore[keyName] = objVal[i].splice(0);
+    } else if(typeof objVal[i] !== "object") {
+      copiedStore[keyName] = objVal[i];
+    } else if (typeof objVal[i] === "object") {
+      copiedStore[keyName] = {...objVal[i]};
+    }
+  }
+  return copiedStore;
 }
 
 module.exports = {
- addNewStore,
- removeStoreAtPosition,
- duplicateStore,
+  addNewStore,
+  removeStoreAtPosition,
+  duplicateStore,
 };
+
 
