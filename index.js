@@ -29,8 +29,6 @@ function duplicateStore(store) {
   let newObj = {}
   for(keys in store){
     let value = undefined
-    let array = []
-    let obj = {}
     if(Array.isArray(store[keys])){
       newObj[keys] = []
       for(item of store[keys]){
