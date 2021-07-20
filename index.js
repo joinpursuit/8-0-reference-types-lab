@@ -5,20 +5,18 @@
  * @returns {Object[]} The same `stores` array that was inputted.
  */
  function addNewStore(stores, store) {
-  stores.push(store);
-  
-  return stores;
+  stores [0] = store
+  return stores
 }
 
 /**
  * Removes a store object at the given position.
- * @param {Object[]]} stores - An array of store objects.
- * @param {number} index - A number representing the index of the store to be removed from the array.
- * @returns {Object[]} The same `stores` array that was inputted.
- */
 function removeStoreAtPosition(stores, index) {
-  stores.splice(index, 1);
-  return stores;
+
+   stores.splice(index, 1);
+
+  return stores
+
 }
 
 /**
