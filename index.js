@@ -7,7 +7,7 @@
 function addNewStore(stores, store) {
   // Add a new store to the end of the original object
   // return the original object with the new store in it.
-  stores.push(store)
+  stores.push(store) // Adding a new object to the end of the original object
 
   return stores
 
@@ -21,7 +21,7 @@ function addNewStore(stores, store) {
  */
 function removeStoreAtPosition(stores, index) {
 
-    stores.splice(index, 1)
+    stores.splice(index, 1) //remove a store object based on the given index. Removing 1
 
   return stores // 
 
@@ -35,22 +35,15 @@ function removeStoreAtPosition(stores, index) {
 function duplicateStore(store) {
 
 
-  const gameStop = Object.assign({}, store)
-  const addressGameStop = Object.assign({}, store.address)
-  gameStop.address = addressGameStop
+  const gameStop = Object.assign({}, store) // duplicate the original 'store' object
+  const addressGameStop = Object.assign({}, store.address) // create a new object for the store's key address
+  gameStop.address = addressGameStop // reassign the gameStop's key to the new object with the store's key address
 
-  // const boardGames = Object.assign({},store.boardGames)
-  // gameStop.boardGames = boardGames
-
-  const boardGames = store.boardGames.slice();  
-  gameStop.boardGames = boardGames
+  const boardGames = store.boardGames.slice();  //create a new array for the store's array boardGames
+  gameStop.boardGames = boardGames // reassign the gameStop's boardGame key to the new array with the store's boardGames key
 
 
-  // for(let i = 0; i < gameStop.length; i++) {
-  //   gameStop[i] = store[i];
-  // } 
-
-    return gameStop
+    return gameStop // return the duplicated store object that is not shared with the inputted 'store'
 
 }
 
