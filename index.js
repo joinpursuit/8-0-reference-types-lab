@@ -28,8 +28,8 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
-  const modifiedStore = store.copyWithin()
-  return store
+  let newStore = JSON.parse(JSON.stringify(store))
+  return newStore
 }
 
 module.exports = {
