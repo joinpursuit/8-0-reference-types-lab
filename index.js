@@ -9,7 +9,6 @@ function addNewStore(stores, store) {
   return stores;
 } 
 
-
 /**
  * Removes a store object at the given position.
  * @param {Object[]]} stores - An array of store objects.
