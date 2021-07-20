@@ -40,7 +40,6 @@ function duplicateStore(store) {
         zip: store.address.zip,
       },
     };
-  
 }
 
 module.exports = {
