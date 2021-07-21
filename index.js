@@ -28,9 +28,33 @@ let newStores = stores.splice(index, 1)
  */
 function duplicateStore(store) {
   // In order to create a DEEP copy of an array, use the JSON method. All the values in the newStore object are disconnected from the original store object.
-let newStore = JSON.parse(JSON.stringify(store))
+// let newStore = JSON.parse(JSON.stringify(store))
+let newStore = {}
+  for(let keys in store){
+    if(Array.isArray(store[keys])){
+      newStore[keys] = []
+      for(let item of store[keys]){
+        newStore[keys].push(item)
+      }
+    } else if(typeof store[keys] === 'object'){
+      newStore[keys] = {}
+      // keyArray = Object.keys(store[keys])
+      // for (let index of keyArray) {
+      //   newKey = [keyArray][index]
+      //   newStore[newKey]
+      // }
+      keyValueArray = Object.entries(store[keys])
+      for (let [newKey,newValue] of keyValueArray) {
+        newStore[keys][newKey] = newValue
+      }
+  
+    }else{
+      newStore[keys] = store[keys]
+    }
+  }
   return newStore
 }
+
 
 module.exports = {
   addNewStore,
