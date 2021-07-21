@@ -27,10 +27,14 @@ let newStores = stores.splice(index, 1)
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
+  // Fancy Method 
   // In order to create a DEEP copy of an array, use the JSON method. All the values in the newStore object are disconnected from the original store object.
 // let newStore = JSON.parse(JSON.stringify(store))
+
+// Alternative Method 
 let newStore = {}
   for(let keys in store){
+
     if(Array.isArray(store[keys])){
       newStore[keys] = []
       for(let item of store[keys]){
@@ -38,11 +42,7 @@ let newStore = {}
       }
     } else if(typeof store[keys] === 'object'){
       newStore[keys] = {}
-      // keyArray = Object.keys(store[keys])
-      // for (let index of keyArray) {
-      //   newKey = [keyArray][index]
-      //   newStore[newKey]
-      // }
+
       keyValueArray = Object.entries(store[keys])
       for (let [newKey,newValue] of keyValueArray) {
         newStore[keys][newKey] = newValue
