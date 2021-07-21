@@ -42,6 +42,8 @@ function duplicateStore(store) {
     store
   }
   let storeCopy = Object.assign({}, store )
+  let arrBoardGame = store.boardGames = [];
+  let storeAddress = store.address = {};
 
   return storeCopy
 }
