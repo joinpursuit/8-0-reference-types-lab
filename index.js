@@ -28,19 +28,34 @@ function removeStoreAtPosition(stores, index) {
  */
 function duplicateStore(store) {//Object.entries(store) can be used to access the key value pairs of the object
 let newStore = {}
-  for (const [key, value] of Object.entries(store)) {//looping through all the key:value pairs of the object
-    if (key === 'boardGames'){ //checking for the boardGames more specifically because .isArray breaks when ran on a object
-      newStore[key] = store[key].slice() //slice to make a copy of array
-    }else if (key === 'address') { //Check for address object. Probably want something a bit more versatile for the if checks
-      newStore[key] = {} //created an empty object for an undefined error
-      for (const [key2, value2] of Object.entries(store[key])) { //Same as above with address object
-        newStore[key][key2] = value2
-      }
-    }else {
-      newStore[key] = value
+//   for (const [key, value] of Object.entries(store)) {//looping through all the key:value pairs of the object
+//     if (key === 'boardGames'){ //checking for the boardGames more specifically because .isArray breaks when ran on a object
+//       newStore[key] = store[key].slice() //slice to make a copy of array
+//     }else if (key === 'address') { //Check for address object. Probably want something a bit more versatile for the if checks
+//       newStore[key] = {} //created an empty object for an undefined error
+//       for (const [key2, value2] of Object.entries(store[key])) { //Same as above with address object
+//         newStore[key][key2] = value2
+//       }
+//     }else {
+//       newStore[key] = value
+//     }
+//   }
+//   return newStore
+// }
+for (const [key, value] of Object.entries(store)) {
+  if (Array.isArray(store[key])){ //seems to work because it isn't trying to look for a method that doesn't exist for other data types.
+  // if (store[key].isArray()){  //Original error
+    newStore[key] = store[key].slice() 
+  }else if (typeof(store[key]) === 'object') { 
+    newStore[key] = {}
+    for (const [key2, value2] of Object.entries(store[key])) {
+      newStore[key][key2] = value2
     }
+  }else {
+    newStore[key] = value
   }
-  return newStore
+}
+return newStore
 }
 
 
