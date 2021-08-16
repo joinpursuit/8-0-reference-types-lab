@@ -19,6 +19,8 @@ return stores;
 function removeStoreAtPosition(stores, index) {
 stores.splice(index,1);
 return stores;
+// gogogog
+
 }
 
 /**
