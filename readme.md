@@ -32,6 +32,7 @@ const store = {
   },
 };
 ```
+// three functions to modify and duplicate reference type
 
 When referenced, `stores` refers to an array of the above objects.
 
