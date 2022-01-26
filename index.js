@@ -5,7 +5,7 @@
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function addNewStore(stores, store) {
-  stores.push(newStore)
+  stores.push(store)
   return stores
 }
 
@@ -16,7 +16,7 @@ function addNewStore(stores, store) {
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
-  stores.splice(1,1)
+  stores.splice(index,1)
   return stores
 }
 
