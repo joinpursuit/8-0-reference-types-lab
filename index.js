@@ -34,29 +34,12 @@ function removeStoreAtPosition(stores, index) {
  */
 function duplicateStore(store) {
   
-  const newStore = Object.create(store);
-  newStore.boardGames
+  let newStore = JSON.parse(JSON.stringify(store)); // creates a deep copy of the orignal object so that the 
+  //                                                   memory location for both 'boardGames' and 'address' isn't
+  //                                                   the same as the object 'store'.
   
-   
 
-
-  return store;
-  //     const store = {
-  //   name: "Gamestoria",
-  //   boardGames: [
-  //     "Terra Mystica",
-  //     "Alhambra",
-  //     "Scythe",
-  //     "Carcassonne",
-  //     "Azul",
-  //   ],
-  //   address: {
-  //     street: "42-11 Broadway",
-  //     city: "Astoria",
-  //     state: "NY",
-  //     zip: "11103",
-  //   },
-  // };
+  return newStore;
 }
 
 module.exports = {
