@@ -28,7 +28,6 @@ function removeStoreAtPosition(stores, index) {
 function duplicateStore(store) {
   // Deep copying of an object without making references to the old object
   const result = JSON.parse(JSON.stringify(store));
-  console.log(result);
   return result;
 }
 
