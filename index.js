@@ -27,10 +27,12 @@ function removeStoreAtPosition(stores, index) {
  */
  
 function duplicateStore(store) {
-  const result = {...store};
-  result.boardGames = [...store.boardGames];
-  result.address = {...store.address};
-  return result;
+   const newStore = {...store};
+   newStore.boardGames = [...store.boardGames];
+   newStore.address = {...store.address};
+  // Alternative and even shorter solution will be; newStore = JSON.parse(JSON.stringify(store))
+
+  return newStore;
 }
 
 module.exports = {
