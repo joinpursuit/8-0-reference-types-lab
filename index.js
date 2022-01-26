@@ -16,7 +16,7 @@ function addNewStore(stores, store) {
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
-  stores.splice(index,1)
+  stores.splice(index,1);
   return stores;
 }
 
@@ -27,10 +27,10 @@ function removeStoreAtPosition(stores, index) {
  */
  
 function duplicateStore(store) {
-const result = {...store}
-result.boardGames = [...store.boardGames]
-result.address = {...store.address}
- return result;
+  const result = {...store};
+  result.boardGames = [...store.boardGames];
+  result.address = {...store.address};
+  return result;
 }
 
 module.exports = {
