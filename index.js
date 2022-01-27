@@ -25,8 +25,14 @@ function removeStoreAtPosition(stores, index) {
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
+
 function duplicateStore(store) {
-  
+  const newStore = Object.assign({}, store);
+  newStore.boardGames = Object.assign([], store.boardGames);
+  newStore.address = Object.assign({}, store.address);
+  return newStore;
+
+  // Jimmynote : Also check out https://www.w3schools.com/Js/js_json_parse.asp
 }
 
 module.exports = {
