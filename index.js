@@ -4,22 +4,56 @@
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object[]} The same `stores` array that was inputted.
  */
-function addNewStore(stores, store) {}
+function addNewStore(stores, store) {  
+  const stores2  = stores;
+    stores2.push(store)
+    //stores.push(store)
+  
+  return stores;
+}
+
 
 /**
  * Removes a store object at the given position.
- * @param {Object[]]} stores - An array of store objects.
- * @param {number} index - A number representing the index of the store to be removed from the array.
+ * @param {Object[]]} stores - An array of store objects. * @param {number} index - A number representing the index of the store to be removed from the array.
  * @returns {Object[]} The same `stores` array that was inputted.
  */
-function removeStoreAtPosition(stores, index) {}
+function removeStoreAtPosition(stores, index) {
+    //index = [i]
+    
+    //stores.pop();
+    //stores.shift();
+    stores.splice(index,1);
+  console.log(stores);
+ 
+  return stores
+}
 
 /**
  * Creates a duplicate of the `store` object. No references should be shared between the inputted `store` and the result.
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
-function duplicateStore(store) {}
+function duplicateStore(store) {
+ let stores2 = {};
+  stores2 = JSON.parse(JSON.stringify(store));
+  return stores2; 
+}
+ /* let stores2 = {};
+   stores2 = Object.assign({}, store);
+ 
+  return stores2; */
+
+  /*for(prop in store) {
+    if (store.hasOwnProperty(prop)) {
+      stores2[prop] = store[prop]
+    }
+  }
+  return stores2;
+} */
+
+
+
 
 module.exports = {
   addNewStore,
