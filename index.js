@@ -30,10 +30,10 @@ function duplicateStore(store) {
 
   let newObj = {};
   newObj.name = store.name;
-  newObj.boardGames = store.boardGames;
-  newObj.address = store.address;
+  newObj.boardGames = store.boardGames.slice();
+  newObj.address = JSON.parse(JSON.stringify(store.address));
   console.log(newObj);
-  
+
   /*for (let key in store){
     newObj.key = store.key;
   }*/
