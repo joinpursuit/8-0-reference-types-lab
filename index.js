@@ -26,9 +26,37 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
+  /* iterative solution */
+
+  let storeCopy = {};
+  for (let key in store){
+    if (typeof store[key] == 'object'){
+      if (Array.isArray(store[key])){
+        storeCopy[key] = [];
+        for (let element of store[key]){
+          storeCopy[key].push(element);
+        }
+      }else{
+        storeCopy[key] = {};
+        for (let key2 in store[key]){
+          storeCopy[key][key2] = store[key][key2];
+        }
+      }
+    }else{
+      storeCopy[key] = store[key];
+    }
+  }
+ 
+ 
+  /* second solution -- definitely the easiest and clear winner!
+  let storeCopy = JSON.parse(JSON.stringify(store));
+  */
+
+  /* first solution
   const storeCopy = Object.assign({}, store);
   storeCopy.boardGames = Object.assign([], store.boardGames);
   storeCopy.address = Object.assign({}, store.address);
+  */
   return storeCopy;
 }
 
