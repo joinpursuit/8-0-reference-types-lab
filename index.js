@@ -4,7 +4,7 @@
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object[]} The same `stores` array that was inputted.
  */
- function addNewStore(stores, store) {}
+
  function addNewStore(stores, store) {
   stores.push(store)
   return stores 
@@ -16,12 +16,10 @@
   * @param {number} index - A number representing the index of the store to be removed from the array.
   * @returns {Object[]} The same `stores` array that was inputted.
   */
- function removeStoreAtPosition(stores, index) {}
+ 
  function removeStoreAtPosition(stores, index) {
-   //process.argv
-   const modifiedStores = stores.splice(index, 1)
-   // const store = stores.shift(index)
-   return stores
+  stores.splice(index, 1) 
+  return stores
  }
  
  /**
@@ -29,11 +27,15 @@
   * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
   * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
   */
- function duplicateStore(store) {}
+ 
  function duplicateStore(store) {
-   const modifiedStore = store.copyWithin()
-   return store
- }
+  let obj1 = store
+  let obj2 =Object.assign({}, obj1);
+  obj2.boardGames = obj2.boardGames.slice(0);
+  let address = Object.assign({},store.address);
+  obj2.address = address;
+  return obj2
+  } 
  
  module.exports = {
    addNewStore,
