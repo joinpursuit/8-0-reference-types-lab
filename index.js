@@ -17,7 +17,7 @@ function addNewStore(stores, store) {
  */
 function removeStoreAtPosition(stores, index) {
  stores.splice(index, 1)
- return stores 
+ return stores
 }
 
 
