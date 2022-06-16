@@ -6,7 +6,7 @@
  */
 function addNewStore(stores, store) {
   stores.push(store)
-  return stores
+  return stores 
 }
 
 /**
