@@ -26,8 +26,17 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
+  /*
   const newStore = JSON.parse(JSON.stringify(store));
   return newStore;
+  https://dev.to/samanthaming/how-to-deep-clone-an-array-in-javascript-3cig
+  JSON.parse(JSON.stringify(obj))
+  only work with Number and String and Object literal without function or Symbol properties.
+*/
+  const store1 = { ...store };
+  store1.boardGames = [...store.boardGames];
+  store1.address = { ...store.address };
+  return store1;
 }
 
 module.exports = {
