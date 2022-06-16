@@ -5,7 +5,7 @@
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function addNewStore(stores, store) {
-  const newStore = stores.push(store);
+  stores.push(store);
   return stores;
 }
 
@@ -16,7 +16,7 @@ function addNewStore(stores, store) {
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
-  stores.splice(index,1);
+  stores.splice(index, 1);
   return stores;
 }
 
@@ -44,9 +44,6 @@ function duplicateStore(store) {
   newStore.boardGames = newArray;
 
   return newStore;
-
-
-
 }
 
 module.exports = {
