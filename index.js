@@ -26,10 +26,14 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
-  let store1 = {...store};
-  store1.boardGames = [...store.boardGames];
-  store1.address = {...store.address};
-  return store1;
+  // let store1 = {...store};
+  // store1.boardGames = [...store.boardGames];
+  // store1.address = {...store.address};
+  // return store1;
+  let store2 = Object.assign({}, store);
+  store2.address = Object.assign({}, store.address);
+  store2.boardGames = store.boardGames.concat();
+  return store2;
 }
 
 module.exports = {
