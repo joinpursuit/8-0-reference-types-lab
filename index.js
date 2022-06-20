@@ -15,11 +15,9 @@ stores[stores.length]=store;
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
-for (let i=0; i<stores.length; i++){
-  if (i === index){
-    stores.splice(i, 1);
-  }
-}
+
+    stores.splice(index, 1);
+ 
 return stores;
 }
 /**
