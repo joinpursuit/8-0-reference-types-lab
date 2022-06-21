@@ -18,7 +18,7 @@ function addNewStore(stores, store) {
  */
 function removeStoreAtPosition(stores, index) {
 
-  delete stores['city']
+  
   let removeAtEnd =  stores.splice(index,index)
  
   
