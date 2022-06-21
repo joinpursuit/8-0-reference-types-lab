@@ -26,19 +26,21 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
+  // Create new objects for reference types
   let storeCopy = {};
   let boardGamesArrayCopy = [];
   let addressObjectCopy = {};
-  // Make a copy of the store.boardGames array
+
+  // Add values of store.boardGames array to boardGamesArrayCopy
   for (let boardGame of store.boardGames) {
     boardGamesArrayCopy.push(boardGame);
   }
-  // Make a copy of the store.address object
+  // Add values in store.address object to addressObjectCopy
   for (let key in store.address) {
     addressObjectCopy[key] = store.address[key];
   }
 
-  // Make a copy of store object
+  // Add non-referenced values to storeCopy
   storeCopy.name = store.name; // creates a copy of the name value, not a reference to it since strings are primitive
   storeCopy.boardGames = boardGamesArrayCopy;
   storeCopy.address = addressObjectCopy;
