@@ -28,6 +28,7 @@ function removeStoreAtPosition(stores, index) {
 function duplicateStore(store) {
   const copyOfStore ={};
   copyOfStore.name = store.name;
+  
   copyOfStore.boardGames = []
   for(let i = 0; i < store.boardGames.length; i++){
     copyOfStore.boardGames[i] = store.boardGames[i];
