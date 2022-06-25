@@ -5,7 +5,7 @@
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function addNewStore(stores, store) {
-  stores.push(store);
+  stores.push(store)
   return stores;
 }
 
