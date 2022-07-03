@@ -215,6 +215,7 @@ describe("removeStoreAtPosition()", () => {
     expect(actual).toStrictEqual(stores);
   });
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 describe("duplicateStore()", () => {
   test("it should return a copy of the given `store` object", () => {
