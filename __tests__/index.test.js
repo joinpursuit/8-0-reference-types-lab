@@ -216,7 +216,7 @@ describe("removeStoreAtPosition()", () => {
   });
 });
 
-describe("duplicateStore()", () => {
+describe.only("duplicateStore()", () => {
   test("it should return a copy of the given `store` object", () => {
     const store = {
       name: "Gamestoria",
