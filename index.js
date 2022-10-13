@@ -15,7 +15,10 @@ function addNewStore(stores, store) {
  * @param {number} index - A number representing the index of the store to be removed from the array.
  * @returns {Object[]} The same `stores` array that was inputted.
  */
-function removeStoreAtPosition(stores, index) {}
+function removeStoreAtPosition(stores, index) {
+  stores.shift(index)
+  return stores
+}
 
 /**
  * Creates a duplicate of the `store` object. No references should be shared between the inputted `store` and the result.
