@@ -4,7 +4,7 @@
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object[]} The same `stores` array that was inputted.
  */
-function addNewStore(stores, store) {
+function addNewStore(stores) {
   stores.push(
   newStore = {
    street: "42-11 Broadway",
