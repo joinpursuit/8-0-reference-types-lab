@@ -20,7 +20,7 @@ function removeStoreAtPosition(stores, index) {
     if (i === index){
       stores.splice(index,1)
     }
-  }
+  } return stores
 }
 
 /**
