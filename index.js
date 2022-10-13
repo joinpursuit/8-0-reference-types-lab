@@ -30,7 +30,9 @@ function removeStoreAtPosition(stores, index) {
  */
 function duplicateStore(store) {
   const result = store;
-  return result
+  result.boardGames = store.boardGames
+  result.address = store.address
+  return result;
 }
 
 module.exports = {
