@@ -29,7 +29,7 @@ function duplicateStore(store) {
   let newStore = JSON.parse(JSON.stringify(store))
   return newStore
 }
-
+//Fix
 module.exports = {
   addNewStore,
   removeStoreAtPosition,
