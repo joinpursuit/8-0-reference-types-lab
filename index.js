@@ -28,7 +28,44 @@ function removeStoreAtPosition(stores, index) {
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
-function duplicateStore(store) {}
+function duplicateStore(store) {
+  // method 1
+
+let newObject = {}
+let newBoardGames = []
+let newAddress = {}
+  let key;
+  let key1
+  let key2
+
+
+      for(key in store)
+      {
+        newObject[key] = store[key]
+      }
+
+      for(key1 in store.boardgames)
+      {
+        newBoardGames[key1] = store.boardgames[key1]
+      }
+      
+      for(key2 in store.address)
+      {
+        newAddress[key2] = store.address[key2]
+      }
+
+// method 2
+
+ //newObject = {...store}
+ //newBoardGames = {...store.boardgames}
+ //newAddress = {...store.address}
+
+// method 3
+
+//newObject = Object.assign({},store)
+
+return newObject
+}
 
 module.exports = {
   addNewStore,
