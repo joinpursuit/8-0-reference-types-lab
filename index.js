@@ -17,10 +17,12 @@ function addNewStore(stores, store) {
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
- 
-  return stores
+  // splice method removes at the given index position and 1 indicates how many items to remove
+  
+    stores.splice(index,1)
+    
+    return stores
 }
-
 /**
  * Creates a duplicate of the `store` object. No references should be shared between the inputted `store` and the result.
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
