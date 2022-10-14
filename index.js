@@ -31,12 +31,23 @@ function removeStoreAtPosition(stores, index) {
 
 function duplicateStore(store) 
 {
+  // both methods work, json.parse is deep copy, spread operator is shallow copy
+
  // ... is spread operator, which creates a shallow copy of original object, and then we use ... again to create inner array and inner object
+ 
+ // method 1
+ 
+ // newObject = {...store}
+  // newObject.boardGames = [...store.boardGames]
+  // newObject.address = {...store.address}
 
-  newObject = {...store}
-  newObject.boardGames = [...store.boardGames]
-  newObject.address = {...store.address}
+  //method 2
 
+  // JSON - javascript object notation
+  // stringify converts everything in class
+  //parse then look into string and convert into an object
+ 
+  let newObject = JSON.parse(JSON.stringify(store))
   return newObject
 }
 
