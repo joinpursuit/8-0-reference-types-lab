@@ -5,8 +5,8 @@
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function addNewStore(stores, store) {
-  stores.push(store)
-  return stores
+  stores.push(store);
+  return stores;
 }
 
 /**
@@ -29,9 +29,7 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
-  const result = store;
-  result.boardGames = store.boardGames
-  result.address = store.address
+  let result = JSON.parse(JSON.stringify(store));
   return result;
 }
 
