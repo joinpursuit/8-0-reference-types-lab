@@ -28,26 +28,36 @@ function removeStoreAtPosition(stores, index) {
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
 function duplicateStore(store) {
-  // empty object
-  let duplicated = {};
-  // assigning the same key and value
-  duplicated.name = store.name;
-
-  // empty array
-  duplicated.boardGames = [];
-  for (let i=0; i<store.boardGames.length; i++) {
-    // assigning the same array
-    duplicated.boardGames[i] = store.boardGames[i];
-  }
-
-  duplicated.address = {};
-  duplicated.address.street = store.address.street;
-  duplicated.address.city = store.address.city;
-  duplicated.address.state = store.address.state;
-  duplicated.address.zip = store.address.zip;
+  // Deep copying "store" object of array and object to a new variable "duplicated"
+  // by using Spread Operator (ES2015 or called ES6)
+  let duplicated = {...store};
+  duplicated.boardGames = [...store.boardGames];
+  duplicated.address = {...store.address};
   return duplicated;
 }
 
+// // NOT EFFECTIVE CODE, COPIED MANUALLY:
+// function duplicateStore(store) {
+//   // empty object
+//   let duplicated = {};
+//   // assigning the same key and value
+//   duplicated.name = store.name;
+
+//   // empty array
+//   duplicated.boardGames = [];
+//   for (let i=0; i<store.boardGames.length; i++) {
+//     // assigning the same array
+//     duplicated.boardGames[i] = store.boardGames[i];
+//   }
+
+//   // copying manually
+//   duplicated.address = {};
+//   duplicated.address.street = store.address.street;
+//   duplicated.address.city = store.address.city;
+//   duplicated.address.state = store.address.state;
+//   duplicated.address.zip = store.address.zip;
+//   return duplicated;
+// }
 
 module.exports = {
   addNewStore,
