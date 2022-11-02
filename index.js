@@ -46,9 +46,17 @@ function removeStoreAtPosition(stores, index) {
  * @param {Object} store - An object representing a single store. See the instructions for details on its shape.
  * @returns {Object} The duplicated store object. This should not be the same as the store that was inputted.
  */
-function duplicateStore(store) { }
+function duplicateStore(store) { 
+  return JSON.parse(JSON.stringify(store))
+}
+
 
 //duplicating the object w/o having a shallow copy 
+//shallow copy//>Object.assign({},a) 
+//"deep" copy //>JSON.parse(JSON.stringify(a))
+//What is the difference between shallow and deep copy in JavaScript?
+//A deep copy means that all of the values of the new variable are copied and disconnected from the original variable. 
+//A shallow copy means that certain (sub-)values are still connected to the original variable. To really understand copying, you have to get into how JavaScript stores values.
 module.exports = {
   addNewStore,
   removeStoreAtPosition,
