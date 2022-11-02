@@ -28,24 +28,17 @@ function addNewStore(stores, store) {
  * @returns {Object[]} The same `stores` array that was inputted.
  */
 function removeStoreAtPosition(stores, index) {
-  const result = [];
-  {
-    if (index >= 1) {
-      stores.splice(index)//>first option
-    }
+  
+{
+      stores.splice(index,1)
     return stores
   }
-
-
 }
-
-// Brainstorming Attempts --V
-//let removed = stores.splice(2, 0)
-// {
+//The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. 
+//An array containing the deleted elements.
+//If only one element is removed, an array of one element is returned.
+//If no elements are removed, an empty array is returned.
 //stores.splice(); -> this will remove index from a certain spot with return the orignal array with the changes 
-// //for (let i = 0; i <= stores.length - 1; i++); {
-//   stores.splice(i)
-// }
 //stores.splice(index, index.length - 1)//not a passable option;//stores.splice(index, 2)//second option, didn't pass by itself
 
 /** 
