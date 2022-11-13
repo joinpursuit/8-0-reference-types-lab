@@ -21,7 +21,7 @@ function removeStoreAtPosition(stores, index) {
  //removes store at given index. played with the splice tool until test passed.
 //console.log(stores.splice(index, 1))
 stores.splice(index, 1)
- return stores
+ return stores;
 }
 
 /**
